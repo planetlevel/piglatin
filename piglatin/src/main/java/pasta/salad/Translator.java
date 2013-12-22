@@ -1,5 +1,9 @@
 package pasta.salad;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import org.apache.commons.lang.StringUtils;
 
 /**
  * Translates a sentence into pig latin.
@@ -10,9 +14,11 @@ public class Translator {
 
 		System.out.print("Enter sentence: ");
 		String english = getString( new BufferedReader(new InputStreamReader(System.in) ) );
-
-		String latin = toPigLatin(english);
-		System.out.println(latin);
+		
+			english = StringUtils.capitaliseAllWords( english );
+			
+			String latin = toPigLatin(english);
+			System.out.println(latin);
 	}
 
 	
