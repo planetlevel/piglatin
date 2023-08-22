@@ -1,4 +1,5 @@
 package pasta.salad;
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -54,6 +55,6 @@ public class Translator {
 	}
 
 	public static String getString( BufferedReader in ) throws IOException {
-		return in.readLine();
+		return BoundedLineReader.readLine(in, 1000000);
 	}
 }
